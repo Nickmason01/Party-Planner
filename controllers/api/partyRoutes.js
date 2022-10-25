@@ -1,3 +1,4 @@
+
 const router = require('express').Router();
 const { Party} = require('../../models/Party');
 const withAuth = require('../../utils/auth');
@@ -17,4 +18,21 @@ router.put("/:id", async (req, res) => {
     res.status(200).json(newParty);
 });
 
+
+router.put("/:name", async (req, res) => {
+    const joinParty = await Party.update(req.body, {
+        where: {
+            name: req.params.name,
+        },
+    });
+
+    if (!joinParty) {
+        res.status(404).jsaon({ message: "Please enter your name." });
+        return;
+    }
+    console.log(joinParty);
+    res.status(200).json(joinParty);
+});
+
 module.exports = router;
+
