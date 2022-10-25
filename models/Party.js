@@ -15,9 +15,12 @@ Party.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+
+
     description:{
       type: DataTypes.STRING,
       allowNull: false,
+
     },
     party_date: {
       type: DataTypes.DATE,
