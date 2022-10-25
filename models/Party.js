@@ -15,9 +15,18 @@ Party.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    description:{
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     party_date: {
       type: DataTypes.DATE,
       allowNull: false,
+    },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,
