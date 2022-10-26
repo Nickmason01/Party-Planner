@@ -21,3 +21,22 @@ const newParty = async (event) => {
         }
     }
 };
+
+const deleteParty = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+        const id = event.target.getAttribute('data-id');//will need hdbars to get the right attribute location.
+        const response = await fetch(`/api/party/${id}`, {
+            method: 'DELETE',
+        });
+
+        if (response.ok) {
+            document.location.replace('/profile');
+        } else {
+            alert('Sorry, this failed deletion.');
+        }
+    }
+};
+// these eventhandlers also need the correct id or class to use these values. 
+document.querySelector('new-party-on-form').addEventListener('submit', newParty);
+
+document.querySelector('party-list-on-form').addEventListener('click', deleteParty);
