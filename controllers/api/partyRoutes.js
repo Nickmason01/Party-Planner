@@ -23,9 +23,35 @@ router.put("/:name", async (req, res) => {
     });
 
     if (!joinParty) {
-        res.status(404).jsaon({ message: "Please enter your name." });
+        res.status(404).json({ message: "Please enter your name." });
         return;
     }
     console.log(joinParty);
     res.status(200).json(joinParty);
+});
+
+router.get('/', async (req, res) => {
+    try {
+        const startParty = await Party.findAll({
+            include: [{ model: Party, }],
+        });
+        return res.json(startParty);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+
+});
+
+router.get('/:id', async (req, res) => {
+    try {
+        const startParty = await Party.findByPk(req.params.id, {
+            include: [{ model: Party, }],
+        });
+
+        return res.json(startParty);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 });
