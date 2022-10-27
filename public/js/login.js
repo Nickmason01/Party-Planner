@@ -1,8 +1,8 @@
 const loginForm = async (event) => {
     event.preventDefault();
 
-    const email = document.querySelector('email-login').ariaValueMax.trim();
-    const password = document.querySelector('#password-login').ariaValueMax.trim();
+    const email = document.querySelector('#email-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
 
     if (email && password) {
         //send post request to api
@@ -23,14 +23,14 @@ const loginForm = async (event) => {
 const signupForm = async (event) => {
     event.preventDefault();
 
-    const userName = document.querySelector('#name-signup').value.trim();
+    const name = document.querySelector('#name-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-sigup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
 
-    if(userName && email && password) {
+    if(name && email && password) {
         const response = await fetch ('/api/user', {
             method: 'POST',
-            body: JSON.stringify({userName, email, password}),
+            body: JSON.stringify({name, email, password}),
             headers: { 'Content-Type': 'application/json'},
         });
 
@@ -43,7 +43,6 @@ const signupForm = async (event) => {
 };
 
 // I believe these reference the hooks
-document
-    .querySelector('.login-form').addEventListener('submit', loginForm);
-document
-    .querySelector('.signup-form').addEventListener('submit', signupForm);
+document.querySelector('#login-form').
+ addEventListener('submit', loginForm);
+document.querySelector('#signup-form').addEventListener('submit', signupForm);

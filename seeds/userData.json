@@ -1,6 +1,7 @@
 [
     {
         "name": "Dimitra",
-        "description": "anything"
+        "email": "fake@gmail.com",
+        "password": "password"
     }
 ]
