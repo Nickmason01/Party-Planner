@@ -6,7 +6,7 @@ const loginForm = async (event) => {
 
     if (email && password) {
         //send post request to api
-        const response = await fetch('/api/user/login', {
+        const response = await fetch('/homepage', {
             method: 'POST',
             body: JSON.stringify({ email, password}),
             headers: { 'Content-Type': 'application/json' },
@@ -43,9 +43,11 @@ const signupForm = async (event) => {
 };
 
 // I believe these reference the hooks
+
 document
 .querySelector('#login-form')
 .addEventListener('submit', loginForm);
 document
 .querySelector('#signup-form')
 .addEventListener('submit', signupForm);
+
