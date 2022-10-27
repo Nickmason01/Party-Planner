@@ -27,6 +27,7 @@ const sess = {
 };
 
 app.use(session(sess));
+app.use(express.static(__dirname + '/public'));
 
 app.engine('handlebars', hdbars.engine);
 app.set('view engine', 'handlebars');

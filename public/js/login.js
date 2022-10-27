@@ -13,7 +13,7 @@ const loginForm = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('profile');
+            document.location.replace('/profile');
         } else {
             alert(response.statusText);
         }
@@ -44,7 +44,10 @@ const signupForm = async (event) => {
 
 // I believe these reference the hooks
 
-document.querySelector('#login-form').
- addEventListener('submit', loginForm);
+document
+.querySelector('#login-form')
+.addEventListener('submit', loginForm);
+document
+.querySelector('#signup-form')
+.addEventListener('submit', signupForm);
 
-document.querySelector('#signup-form').addEventListener('submit', signupForm);
