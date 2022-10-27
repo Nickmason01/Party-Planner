@@ -14,7 +14,7 @@ res.render('homepage', {parties:partyData, logged_in: req.session.logged_in})
 router.get('/login', (req, res) => {
 
   if(req.session.logged_in) {
-    res.redirect('/main');
+    res.redirect('/homepage');
     return;
   }
   res.render('login');

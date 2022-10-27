@@ -1,8 +1,8 @@
 const newParty = async (event) => {
     event.preventDefault();
 
-    const partyName = document.querySelector('#party-name').ariaValueMax.trim();
-    const description = document.querySelector('#description');
+    const partyName = document.querySelector('#party-name').value.trim();
+    const description = document.querySelector('#description').value.trim();
     const partyDate = document.querySelector('#party-date');
 
     if (partyName && description && partyDate) {
