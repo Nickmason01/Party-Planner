@@ -1,6 +1,6 @@
 
 const router = require('express').Router();
-const { Party} = require('../../models/Party');
+const { Party } = require('../../models/Party');
 const withAuth = require('../../utils/auth');
 
 router.put("/:id", async (req, res) => {
@@ -27,7 +27,7 @@ router.put("/:name", async (req, res) => {
     });
 
     if (!joinParty) {
-        res.status(404).jsaon({ message: "Please enter your name." });
+        res.status(404).json({ message: "Please enter your name." });
         return;
     }
     console.log(joinParty);
