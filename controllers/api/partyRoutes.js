@@ -34,5 +34,51 @@ router.put("/:name", async (req, res) => {
     res.status(200).json(joinParty);
 });
 
+
+router.get('/', async (req, res) => {
+    try {
+        const startParty = await Party.findAll({
+            include: [{ model: Party, }],
+        });
+        return res.json(startParty);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+
+});
+
+router.get('/:id', async (req, res) => {
+    try {
+        const startParty = await Party.findByPk(req.params.id, {
+            include: [{ model: Party, }],
+        });
+
+        return res.json(startParty);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+router.delete('/:id', withAuth, async (req, res) => {
+    const partyData = await Party.destroy({
+        where : {
+            id: req.params.id,
+            user_id: req.session.user_id,
+        },
+    });
+
+    if(!partyData) {
+        res.status(404).json({message: 'No party selected!'});
+        return;
+    }
+
+    res.status(200).json(partyData);
+
+});
+    
+
 module.exports = router;
+
 
