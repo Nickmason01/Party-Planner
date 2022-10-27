@@ -1,9 +1,15 @@
 const express = require('express');
 const router = require("express").Router();
 
+const { User } = require("../../models/User");
+// user route is checking for the login id
+router.post("/", async (req, res) => {
+
+
 const { User } = require("../../models");
 
 router.post('/', async (req, res) => {
+
   const userData = await User.create(req.body);
 
   req.session.save(() => {
