@@ -34,5 +34,23 @@ router.put("/:name", async (req, res) => {
     res.status(200).json(joinParty);
 });
 
+router.delete('/:id', withAuth, async (req, res) => {
+    const partyData = await Party.destroy({
+        where : {
+            id: req.params.id,
+            user_id: req.session.user_id,
+        },
+    });
+
+    if(!partyData) {
+        res.status(404).json({message: 'No party selected!'});
+        return;
+    }
+
+    res.status(200).json(partyData);
+
+});
+    
+
 module.exports = router;
 

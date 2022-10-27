@@ -43,5 +43,8 @@ const signupForm = async (event) => {
 };
 
 // I believe these reference the hooks
-document.querySelector('#login-form').addEventListener('submit', loginForm);
+
+document.querySelector('#login-form').
+ addEventListener('submit', loginForm);
+
 document.querySelector('#signup-form').addEventListener('submit', signupForm);
