@@ -14,8 +14,12 @@ router.put("/:id", async (req, res) => {
         res.status(404).json({ message: "Please create a new party." });
         return;
     }
-    console.log(newParty);
-    res.status(200).json(newParty);
+    res.status(200).json(updateParty);
+});
+
+router.post("/", withAuth, async (req, res) => {
+        const newParty = await Party.create(req.body);
+        newParty ? res.status(200).json(newParty) : res.status(400).json(err);
 });
 
 

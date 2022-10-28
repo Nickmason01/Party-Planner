@@ -5,17 +5,18 @@ const newParty = async (event) => {
     const description = document.querySelector('#description').value.trim();
     const partyDate = document.querySelector('#party-date');
 
-    if (partyName && description && partyDate) {
+    if (partyName && description) {
         const response = await fetch('/api/party', {
             method: 'POST',
-            body: JSON.stringify({ partyName, description, partyDate}),
+            body: JSON.stringify({ name: partyName, description, party_date: "10-27-2022"}),
             headers: {
                 'Content-Type': 'application/json',
             },
         });
 
         if (response.ok) {
-            document.location.replace('/profile');
+            // console.log(response);
+            document.location.replace('/');
         } else {
             alert('Failed to create a post')
         }
@@ -30,13 +31,17 @@ const deleteParty = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/profile');
+            document.location.replace('/homepage');
         } else {
             alert('Sorry, this failed deletion.');
         }
     }
 };
 // these eventhandlers also need the correct id or class to use these values. 
-document.querySelector('new-party-on-form').addEventListener('submit', newParty);
+document
+.querySelector('#new-party-on-form')
+.addEventListener('submit', newParty);
 
-document.querySelector('party-list-on-form').addEventListener('click', deleteParty);
+document
+.querySelector('#party-list-on-form')
+.addEventListener('click', deleteParty);
