@@ -1,13 +1,34 @@
-{{!-- here we must show the parties i created and where i can create a new party event --}}
+{{!-- here we must show the parties i created --}}
 {{#each parties}}
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome, {{user.name}}!</h2>
     <p>{{description}}</p>
     <p>{{party_date}}</p>
   </div>
 </div>
 {{/each}}
+
+<div class = "row mt-4">
+  <div class ="col-md-6"></div>
+    <h3>Make a New Party</h3>
+
+    <form>
+  <div class="form-group">
+    <label for="party-name">Party Name</label>
+    <input type="text" class="form-control" id="party-name" placeholder="party-name">
+  </div>
+   <div class="form-group">
+    <label for="description">Description</label>
+    <input type="text" class="form-control" id="description" placeholder="description">
+  </div>
+  <div class="form-group">
+    <label for="party-date"></label>
+    <button>Create Party</button>
+
+  </div>
+</form>
+</div>
 
 {{!-- have a homepage where my events are and dashboard for community parties --}}
 
