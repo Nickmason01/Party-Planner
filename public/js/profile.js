@@ -3,12 +3,12 @@ const newParty = async (event) => {
 
     const partyName = document.querySelector('#party-name').value.trim();
     const description = document.querySelector('#description').value.trim();
-    const partyDate = document.querySelector('#party-date');
+    // const partyDate = document.querySelector('#party-date');
 
     if (partyName && description) {
         const response = await fetch('/api/party', {
             method: 'POST',
-            body: JSON.stringify({ name: partyName, description, party_date: "10-27-2022"}),
+            body: JSON.stringify({ name: partyName, description, party_date: '2023-10-31'}),
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -45,3 +45,8 @@ document
 document
 .querySelector('#party-list-on-form')
 .addEventListener('click', deleteParty);
+
+module.exports = {
+    newParty,
+    deleteParty
+} // added the export incase so that the window events can be read in other modules.

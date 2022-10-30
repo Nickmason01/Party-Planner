@@ -1,35 +1,56 @@
-{{!-- here we must show the parties i created --}}
+{{! here we must show the parties i created }}
 
-{{#each parties as |party| }}
- <h2>Welcome, {{user.name}}!</h2>
-<div class="row">
-  <div class="col-auto">
-    <p>{{name}}</p>
-    <p>{{description}}</p>
-    <p>{{party_date}}</p>
+{{#each parties as |party|}}
+  <h2>Welcome, {{user.name}}!</h2>
+  <div class="row">
+    <div class="col-auto">
+      <p>{{name}}</p>
+      <p>{{description}}</p>
+      <p>{{party_date}}</p>
+    </div>
   </div>
-</div>
 {{/each}}
 
 <form id="new-party-on-form">
-<div class = "row mt-4">
-  <div class ="col-md-6"></div>
+  <div class="row mt-4">
+    <div class="col-md-6"></div>
     <h3>Make a New Party</h3>
-  <div class="form-group">
-    <label for="party-name">Party Name</label>
-    <input type="text" class="form-control" id="party-name" placeholder="party-name">
-  </div>
-   <div class="form-group">
-    <label for="description">Description</label>
-    <input type="text" class="form-control" id="description" placeholder="description">
-  </div>
-  <div class="form-group">
-    <label for="party-date"></label>
-    <button type="submit">Create Party</button>
+
+    <div class="form-group">
+      <label for="party-name">Party Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="party-name"
+        placeholder="party-name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="description"
+        placeholder="description"
+      />
+    </div>
+
+    <div class="form-group">
+      <div class="mb-0">
+        <label for="calendar" class="form-label">Select date and time</label>
+        <input
+          class="form-control form-control-solid"
+          placeholder="Pick date & time"
+          id="party-date"
+        />
+      </div>
+      <button type="submit">Create Party</button>
+    </div>
 
   </div>
-</div>
 </form>
-{{!-- have a homepage where my events are and dashboard for community parties --}}
+{{! have a homepage where my events are and dashboard for community parties }}
 
 <script src="./js/profile.js"></script>
+<script src="../utils/helpers.js"></script>
