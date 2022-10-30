@@ -3,12 +3,12 @@ const { Party, User } = require("../models");
 const withAuth = require('../utils/auth');
 
 router.get("/", async (req, res) => {
-  const parties = await Party.findAll({
+  const partyData = await Party.findAll({
     include: [{ model: User }],
   });
-  const partyData = parties.map((party) => party.get({ plain: true }));
+  const parties= partyData.map((party) => party.get({ plain: true }));
   res.render("homepage", {
-    parties: partyData,
+    parties,
     loggedIn: req.session.loggedIn,
   });
 });
