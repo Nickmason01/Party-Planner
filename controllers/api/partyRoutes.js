@@ -49,18 +49,18 @@ router.put("/:name", async (req, res) => {
 });
 
 
-router.get('/', async (req, res) => {
-    try {
-        const startParty = await Party.findAll({
-            include: [{ model: Party, }],
-        });
-        return res.json(startParty);
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
+// router.get('/', async (req, res) => {
+//     try {
+//         const startParty = await Party.findAll({
+//             include: [{ model: Party, }],
+//         });
+//         return res.json(startParty);
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).json(err);
+//     }
 
-});
+// });
 
 router.get('/:id', async (req, res) => {
     try {

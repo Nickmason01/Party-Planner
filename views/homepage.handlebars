@@ -1,13 +1,14 @@
 {{! here we must show the parties i created }}
 
-{{#each parties as |party|}}
-  <h2>Welcome, {{user.name}}!</h2>
-  <div class="row">
-    <div class="col-auto">
-      <p>{{name}}</p>
-      <p>{{description}}</p>
-      <p>{{party_date}}</p>
-    </div>
+
+{{#each parties as |party| }}
+ <h2>Welcome, {{user.name}}!</h2>
+<div class="row">
+  <div class="col-auto">
+    <p>{{name}}</p>
+    <p>{{description}}</p>
+    <p>{{party_date}}</p>
+    <button id ='party-list-on-form'>Cancel Party?</button>
   </div>
 {{/each}}
 

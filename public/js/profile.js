@@ -24,14 +24,14 @@ const newParty = async (event) => {
 };
 
 const deleteParty = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-        const id = event.target.getAttribute('data-id');//will need hdbars to get the right attribute location.
+    if (event.target.hasAttribute('party.id')) {
+        const id = event.target.getAttribute('party.id');//will need hdbars to get the right attribute location.
         const response = await fetch(`/api/party/${id}`, {
             method: 'DELETE',
         });
 
         if (response.ok) {
-            document.location.replace('/homepage');
+            document.location.replace('/');
         } else {
             alert('Sorry, this failed deletion.');
         }
