@@ -20,10 +20,15 @@ router.put("/:id", async (req, res) => {
 router.post("/", withAuth, async (req, res) => {
     console.log(req.session);
         const partyCreator = req.body;
-        partyCreator.user_id = req.session.user_id
+
+        partyCreator.user_id = req.session.user_id,
+        // partyCreator.name = req.session.name,
+        // partyCreator.description = req.session.description,
+        // partyCreator.party_date = req.session.party_date;
         console.log(partyCreator);
         
         const newParty = await Party.create(partyCreator);
+
         newParty ? res.status(200).json(newParty) : res.status(400).json(err);
 });
 

@@ -4,7 +4,7 @@ need:
 
 - delete routes and delete-submit button
 
-- date picker --- https://www.npmjs.com/package/js-datepicker#installation
+- flatpickr https://flatpickr.js.org/getting-started/
 
 - check community page. make sure the link is working and all users are showing up
 
