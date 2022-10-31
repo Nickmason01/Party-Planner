@@ -1,4 +1,3 @@
-
 const router = require('express').Router();
 const { Party } = require('../../models');
 const withAuth = require('../../utils/auth');
@@ -62,18 +61,7 @@ router.put("/:name", async (req, res) => {
 
 // });
 
-router.get('/:id', async (req, res) => {
-    try {
-        const startParty = await Party.findByPk(req.params.id, {
-            include: [{ model: Party, }],
-        });
 
-        return res.json(startParty);
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
 
 router.delete('/:id', withAuth, async (req, res) => {
     const partyData = await Party.destroy({

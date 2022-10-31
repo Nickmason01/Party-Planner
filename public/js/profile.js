@@ -46,7 +46,7 @@ document
 .querySelector('#party-list-on-form')
 .addEventListener('click', deleteParty);
 
-module.exports = {
-    newParty,
-    deleteParty
-} // added the export incase so that the window events can be read in other modules.
+// module.exports = {
+//     newParty,
+//     deleteParty
+// } // added the export incase so that the window events can be read in other modules.
