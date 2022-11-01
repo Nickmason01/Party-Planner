@@ -14,22 +14,22 @@ router.get("/community", async (req, res) => {
 });
 
 router.get('/', withAuth, async (req, res) => {
-  try {
+  // try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
+    const partyData = await Party.findAll( {
       attributes: { exclude: ['password'] },
-      include: [{ model: Party }],
+      include: [{ model: User }],
     });
 
-    const user = userData.get({ plain: true });
-
+    const parties = partyData.map(party => party.get({plain: true}));
+    console.log(parties);
     res.render('homepage', {
-      ...user,
+      parties,
       loggedIn: true
     });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
 });
 
 router.get('/party/:id', async (req, res) => {
@@ -38,8 +38,9 @@ router.get('/party/:id', async (req, res) => {
           include: [{ model: User, }],
       });
       const partyData = startParty.get({ plain: true});
+      console.log(partyData);
       res.render('event', {
-          parties: partyData
+          party: partyData
       });
       // return res.json(startParty);
   } catch (err) {
