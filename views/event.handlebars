@@ -1,12 +1,14 @@
-{{!-- specific event --}}
-{{!-- how can we include the helpers for the format date --}}
+{{! specific event }}
+
 <div class="card">
   <div class="card-content">
     <p>This is the name: {{party.name}}</p>
-   
+
     <p>This is the description: {{party.description}}</p>
-   
-    <p>Created by {{user.name}} on {{ date_created}}</p>
+
+    <p>Save the date: {{party.party_date}}</p>
+
+    <p>Created by {{user.name}} on {{date_created}}</p>
   </div>
-    <button>RSVP to this party!</button>
+  <button>RSVP to this party!</button>
 </div>

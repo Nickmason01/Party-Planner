@@ -21,9 +21,6 @@ router.post("/", withAuth, async (req, res) => {
         const partyCreator = req.body;
 
         partyCreator.user_id = req.session.user_id,
-        // partyCreator.name = req.session.name,
-        // partyCreator.description = req.session.description,
-        // partyCreator.party_date = req.session.party_date;
         console.log(partyCreator);
         
         const newParty = await Party.create(partyCreator);
@@ -46,6 +43,8 @@ router.put("/:name", async (req, res) => {
     console.log(joinParty);
     res.status(200).json(joinParty);
 });
+
+// a get route for parties to be displayed on the event page
 
 
 // router.get('/', async (req, res) => {

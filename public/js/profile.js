@@ -1,52 +1,61 @@
+// const {User, Party} = require('.../models');
+// Is this needed to function with the models?
 const newParty = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const partyName = document.querySelector('#party-name').value.trim();
-    const description = document.querySelector('#description').value.trim();
-    // const partyDate = document.querySelector('#party-date');
+  const partyName = document.querySelector("#party-name").value.trim();
+  const description = document.querySelector("#description").value.trim();
+  const partyDate = document.querySelector('#party-date').value;
 
-    if (partyName && description) {
-        const response = await fetch('/api/party', {
-            method: 'POST',
-            body: JSON.stringify({ name: partyName, description, party_date: '2023-10-31'}),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
+  if (partyName && description && partyDate) {
+    console.log(partyDate)
+    const response = await fetch("/api/party", {
+      method: "POST",
+      body: JSON.stringify({
+        name: partyName,
+        description: description,
+        party_date: partyDate,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-        if (response.ok) {
-            // console.log(response);
-            document.location.replace('/');
-        } else {
-            alert('Failed to create a post')
-        }
+    if (response.ok) {
+      // console.log(response);
+      document.location.replace("/");
+    } else {
+      alert("Failed to create a post");
     }
+  }
 };
 
 const deleteParty = async (event) => {
-    if (event.target.hasAttribute('party.id')) {
-        const id = event.target.getAttribute('party.id');//will need hdbars to get the right attribute location.
-        const response = await fetch(`/api/party/${id}`, {
-            method: 'DELETE',
-        });
+  if (event.target.hasAttribute("party.id")) {
+    const id = event.target.getAttribute("party.id"); //will need hdbars to get the right attribute location.
+    const response = await fetch(`/api/party/${id}`, {
+      method: "DELETE",
+    });
 
-        if (response.ok) {
-            document.location.replace('/');
-        } else {
-            alert('Sorry, this failed deletion.');
-        }
+    if (response.ok) {
+      document.location.replace("/");
+    } else {
+      alert("Sorry, this failed deletion.");
     }
+  }
 };
-// these eventhandlers also need the correct id or class to use these values. 
+// these event handlers also need the correct id or class to use these values.
 document
-.querySelector('#new-party-on-form')
-.addEventListener('submit', newParty);
+  .querySelector("#new-party-on-form")
+  .addEventListener("submit", newParty);
 
 document
-.querySelector('#party-list-on-form')
-.addEventListener('click', deleteParty);
+  .querySelector("#party-list-on-form")
+  .addEventListener("click", deleteParty);
 
-// module.exports = {
-//     newParty,
-//     deleteParty
-// } // added the export incase so that the window events can be read in other modules.
+flatpickr('#party-date', {
+    enableTime: true,
+    dateFormat: 'Y-m-d H:i',
+    altInput: true,
+    altFormat: 'F j, Y',
+})
