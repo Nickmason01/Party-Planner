@@ -1,12 +1,13 @@
 {{! here we must show the parties i created }}
 {{#each parties as |party| }}
  <div class="row"></div>
- <h2>Party Created By: {{user.name}}!</h2>
+ <h3>{{name}}</h3>
+ 
   <div class="col-auto">
-    <p>{{name}}</p>
+    <h4>Party created by: {{user.name}}</h4>
     <p>{{description}}</p>
     <p>{{format_date party_date}} {{format_time party_date}}</p>
-    <button data-id={{id}} id ='party-list-on-form'>Cancel Party?</button>
+    <button data-id={{id}} id='party-list-on-form'>Cancel Party?</button>
   </div>
 {{/each}}
 
