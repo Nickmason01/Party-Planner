@@ -14,7 +14,7 @@ router.get("/community", async (req, res) => {
 });
 
 router.get('/', withAuth, async (req, res) => {
-  // try {
+  try {
     // Find the logged in user based on the session ID
     const partyData = await Party.findAll( {
       attributes: { exclude: ['password'] },
@@ -27,9 +27,9 @@ router.get('/', withAuth, async (req, res) => {
       parties,
       loggedIn: true
     });
-  // } catch (err) {
-  //   res.status(500).json(err);
-  // }
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get('/party/:id', async (req, res) => {
