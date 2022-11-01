@@ -1,9 +1,7 @@
 {{! here we must show the parties i created }}
-
-
 {{#each parties as |party| }}
+ <div class="row"></div>
  <h2>Welcome, {{user_id.name}}!</h2>
-<div class="row">
   <div class="col-auto">
     <p>{{name}}</p>
     <p>{{description}}</p>
@@ -12,8 +10,8 @@
   </div>
 {{/each}}
 
+<div class="row mt-4"></div>
 <form id="new-party-on-form">
-  <div class="row mt-4">
     <div class="col-md-6"></div>
     <h3>Make a New Party</h3>
 
@@ -48,9 +46,8 @@
       </div>
       <button type="submit">Create Party</button>
     </div>
-
-  </div>
 </form>
+ </div>
 {{! have a homepage where my events are and dashboard for community parties }}
 
 <script src="./js/profile.js"></script>

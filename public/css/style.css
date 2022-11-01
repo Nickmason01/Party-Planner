@@ -1,0 +1,20 @@
+.nav {
+   text-align: center;
+   font-size: 25px;
+   font-weight: bold;
+};
+
+#login-form {
+    margin: 20px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+};
+
+h1 .main-header {
+    text-align: center;
+};
+
+#party-list-on-form {
+    float: right;
+};
