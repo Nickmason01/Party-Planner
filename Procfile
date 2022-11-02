@@ -1,1 +1,2 @@
-web: npm start
+web: gunicorn party-planner.wsgi --log-file 
+
