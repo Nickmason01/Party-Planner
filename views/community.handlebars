@@ -1,15 +1,15 @@
 {{!-- this page shows events/parties in community --}}
  {{#if parties.length}}
-  <div class="col-md-6 project-list">
+  <div class="col-md-12 project-list">
     <h3>All Parties:</h3>
 
     {{#each parties as |party|}}
-    <div class="row mb-2">
+    <div class="row mb-2 party-post">
       <div class="col-md-8">
-        <h4><a href="/party/{{party.id}}">{{party.name}}</a></h4>
+        <h4><a class='button-links'href="/party/{{party.id}}">{{party.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{party.id}}">RSVP to this Party!</button>
+        <button id="comm-rsvp-btn"class="btn btn-sm" data-id="{{party.id}}">RSVP to this Party!</button>
       </div>
     </div>
     {{/each}}

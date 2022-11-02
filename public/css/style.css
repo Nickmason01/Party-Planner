@@ -1,14 +1,14 @@
 * {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(18, 16, 33);
-    background-color: rgb(194, 202, 238);
+    font-family:'Open Sans', sans-serif;
+    color: #2b3a67;
+    margin:0;
 }
 
 body {
     margin: 0;
     height: 100vh;
     position:relative;
-    background-color: rgb(194, 202, 238);
+    background-color: #c0b9dd;
  }
 
 main {
@@ -20,25 +20,187 @@ nav {
    justify-content: space-evenly;
    font-size: 25px;
    font-weight: bold;
+   background: white;
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    align-items: center;
 }
 
-button {
-    /* needs to be styled */
+ #create-party-btn {
+  border: none;
+  color:white;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  background-color: #2b3a67;
+margin-top:5px;
+border-radius: 5px;
+font-weight: bold;
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+transition:200ms;
+width: 100%;
+    padding: 5px;
+    margin-top: 10px;
 }
 
-/* .comm-button {
+#create-party-btn:hover {
+    box-shadow: none;
+    transform: translateY(2px)
+}
+
+#comm-rsvp-btn:hover {
+    box-shadow: none;
+    transform: translateY(2px)
+}
+
+.button-links {
     padding: 10px;
-} */
+    cursor: pointer;
+    text-decoration: none;
+    color: #2b3a67;
+}
+
+.button-links:hover {
+    text-decoration: none;
+    border-bottom: 2.5px solid #2b3a67;
+    color: #2b3a67;
+
+}
 
 #login-form {
     margin: 20px;
     text-align: center;
     font-size: 25px;
     font-weight: bold;
+    width: 100%;
 }
 
 .main-header {
     text-align: center;
     justify-content: center;
+    background-color: #2b3a67;
+    padding: 10px;
 }
 
+.card-content p {
+    font-weight: bold;
+}
+
+.card {
+background-color: #ded9e2;
+padding: 15px;
+border-radius: 10px;
+transition:200ms;
+margin:10px;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+#rsvp-button, .login, .signup, #comm-rsvp-btn {
+    border: none;
+    border-radius: 10px;
+    background-color: #2b3a67;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+}
+
+#rsvp-button {
+    height: 30px;
+}
+
+#comm-rsvp-btn {
+    height: 40px;
+    font-size: 20px;
+    transition:200ms;
+}
+
+#party-title {
+    margin-left: 10px;
+}
+
+#cancel-party-btn {
+    background-color: rgba(243, 84, 84, 0.6);
+    border-radius: 5px;
+    border-color: rgb(160, 12, 12);
+    color:rgb(160, 12, 12);
+    border: 1px solid;
+}
+
+.login-signup-div {
+    display: flex;
+    flex-wrap:wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+#signup-form {
+    width: 50%;
+}
+
+#login-form-div {
+    width:50%;
+}
+
+.input {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    padding: 5px;
+    font-size: 20px;
+}
+.input:focus {
+    outline:none;
+}
+
+.signup, .login {
+    height: 40px;
+    font-size: 20px;
+    transition: 200ms;
+}
+
+.signup:hover{
+    box-shadow: none;
+    transform: translateY(2px)
+}
+
+.login:hover {
+    box-shadow: none;
+    transform: translateY(2px)
+}
+
+#party-planner {
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+#party-planner:hover {
+    text-decoration: none;
+}
+
+.party-post {
+    background: #ded9e2;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.add-post-container {
+width:100%;
+justify-content: center;
+}
+
+#new-party-on-form {
+    width: 60%;
+}
+
+#description {
+    height: 100px;
+}
+
+h3.card-title.text-center {
+    margin-left: 10px;
+}

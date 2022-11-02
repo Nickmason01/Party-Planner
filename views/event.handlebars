@@ -2,15 +2,15 @@
 
 <div class="card justify-space-between">
   <div class="card-content">
-    <p>This is the name: {{party.name}}</p>
+    <p>Event: {{party.name}}</p>
 
-    <p>This is the description: {{party.description}}</p>
+    <p>Description: {{party.description}}</p>
 
     <p>Save the date: {{ format_date party.party_date}} {{format_time party.party_date}}</p>
 
     <p>Created by {{party.user.name}} on {{format_date party.date_created}} {{format_time party.date_created}}</p>
   </div>
-  <button>RSVP to this party!</button>
+  <button id="rsvp-button">RSVP to this party!</button>
 </div>
 
 {{!-- party.user.name accessed the name of the user who created the party --}}
