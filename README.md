@@ -18,10 +18,11 @@ run from the deployed app at:
 This app is used to create and catelog all parties by a given user. This can be used as a "homebase" for a user to check out parties by other users, RSVP to parties that interest them, and use as a point of reference when planning out events. 
 
 ## Credits
-Lindsay Allen, Dimitra Anastasopulos, Nick Mason, Shuhua Fang
-
-
-
+ <p><a href="https://github.com/katsaymeow">Lindsay Allen</a></p>
+ <p><a href="https://github.com/dimitra-anasta">Dimitra Anastasopulos</a></p>
+ <p><a href="https://github.com/Nickmason01">Nick Mason</a></p>
+ <p><a href="https://github.com/Katherineshf">Shuhua Fang</a></p>
+ 
 ## License
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
