@@ -1,18 +1,12 @@
-{{! here we must show the parties i created }}
+{{! shows the parties of all users }}
 {{#each parties as |party| }}
  <div class="card justify-space-between">
-  {{!-- we like cards but not the lines --}}
-  <div class="row">
- <h3 class="card-title text-center">{{name}}</h3>
- {{!-- this is not going center --}}
- </div>
   <div class="col">
-    <div class="col">
-      <div class="col">
-    <h4>Party created by: {{user.name}}</h4>
-    <p>{{description}}</p>
-    <p>{{format_date party_date}} {{format_time party_date}}</p>
-    
+ <h3 class="card-title text-center" id="margin">{{name}}</h3>
+ </div>
+  <div class="col"><h4 class="text-center">Party created by: {{user.name}}</h4>
+    <div class="col"> <p class="text-center">{{description}}</p>
+      <div class="col"><p class="text-center">{{format_date party_date}} {{format_time party_date}}</p>
     </div>
     </div>
   </div>
@@ -20,6 +14,5 @@
   </div>
 {{/each}}
 
-
+{{!-- links to the profile logic --}}
 <script src="./js/profile.js"></script>
-{{!-- <script src="../utils/helpers.js"></script> --}}

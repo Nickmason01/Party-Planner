@@ -1,19 +1,19 @@
+{{!-- create a new party --}}
 <div class="row mt-4">
 <form id="new-party-on-form">
-    <div class="col-md-6"></div>
     <h3>Make a New Party</h3>
 
-    <div class="form-group">
+    <div class="form-group input-group-lg row">
       <label for="party-name">Party Name</label>
       <input
         type="text"
         class="form-control"
         id="party-name"
-        placeholder="party-name"
+        placeholder="name your party"
       />
     </div>
 
-    <div class="form-group">
+    <div class="form-group input-group-lg row" >
       <label for="description">Description</label>
       <input
         type="text"
@@ -22,43 +22,37 @@
         placeholder="description"
       />
     </div>
-
-    <div class="form-group">
-      <div class="mb-0">
-        <label for="calendar" class="form-label">Select date and time</label>
+{{!-- I do not know why the background did not change with this one. the class is form-group. I meant the apply it to the login as well. feel free to change it back or the colors in general. --}}
+    <div class="form-group input-group-lg row">
+        <label for="calendar" class="form-label">Select date and time for your party</label>
         <input
-          class="form-control form-control-solid"
-          placeholder="Pick date & time"
+          class="form-control"
+          placeholder="pick date & time"
           id="party-date"
         />
       </div>
+      <div>
       <button type="submit">Create Party</button>
     </div>
 </form>
  </div>
-
- {{#each parties as |party| }}
+{{!-- show the parties for the login user --}}
+{{#each parties as |party| }}
  <div class="card justify-space-between">
-  {{!-- we like cards but not the lines --}}
-  <div class="row">
- <h3 class="card-title text-center">{{name}}</h3>
- {{!-- this is not going center --}}
- </div>
   <div class="col">
-    <div class="col">
-      <div class="col">
-    <h4>Party created by: {{user.name}}</h4>
-    <p>{{description}}</p>
-    <p>{{format_date party_date}} {{format_time party_date}}</p>
+ <h3 class="card-title text-center"  id="margin">{{name}}</h3>
+ </div>
+  <div class="col"><h4 class="text-center">Party created by: {{user.name}}</h4>
+    <div class="col"> <p class="text-center">{{description}}</p>
+      <div class="col"><p class="text-center">{{format_date party_date}} {{format_time party_date}}</p>
     
-    <button data-id={{id}} onclick="deleteParty(event)">Cancel Party?</button>
+    <button class="cancel-button" data-id={{id}} onclick="deleteParty(event)">Cancel Party?</button>
     </div>
     </div>
   </div>
   
   </div>
 {{/each}}
-{{! have a homepage where my events are and dashboard for community parties }}
 
+{{!-- links to the profile logic --}}
 <script src="./js/profile.js"></script>
-{{!-- <script src="../utils/helpers.js"></script> --}}

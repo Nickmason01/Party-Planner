@@ -1,42 +1,54 @@
+/* I really wanted to create some depth with shadows. I do not know these tricks well enough to really bang out. I did start to organize the div and what nots. We may still need to look at rouge ones as well. There were open ones and extra ending tags. That might stop it from working. We might need to create some more classes or id to finish that off. I did get everything kinda centered, but it still needs some finishing. I mainly worked on the profile and homepage handlebars */
+
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(18, 16, 33);
-    background-color: rgb(194, 202, 238);
+    background-color: rgb(219, 223, 243);
 }
-
+/* all the magic - relative *thanks nick */
 body {
     margin: 0;
     height: 100vh;
-    position:relative;
-    background-color: rgb(194, 202, 238);
+    position: relative;
  }
-
+/* sets the background of the form input */
+.form-control {
+    background-color: rgb(193, 194, 202);
+ }
+/* adjust the position on the form */
+ #new-party-on-form {
+    margin-left: 33%;
+ }
+ /* sets the view height to full for all backgrounds */
 main {
     height: 100vh;
  }
-
+/* spaces the nav bar for usability  */
 nav {
    text-align: center;
    justify-content: space-evenly;
    font-size: 25px;
    font-weight: bold;
 }
-
-button {
-    /* needs to be styled */
+/* moves the postilion of the delete party button */
+.cancel-button {
+    border: 1px solid black;
+    margin-bottom: 44px;
+    margin-left: 444px;
+    background-color: rgb(174, 189, 222);
 }
-
-/* .comm-button {
-    padding: 10px;
-} */
-
+/* sets the margin for the h3 tag in the party each */
+#margin {
+    margin-top: 44px;
+}
+/* using this to start with the login form */
 #login-form {
     margin: 20px;
     text-align: center;
     font-size: 25px;
     font-weight: bold;
 }
-
+/* this this the header */
 .main-header {
     text-align: center;
     justify-content: center;
