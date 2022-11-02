@@ -31,17 +31,21 @@ const newParty = async (event) => {
 };
 
 const deleteParty = async (event) => {
+ 
   if (event.target.hasAttribute("data-id")) {
 
     const id = event.target.getAttribute("data-id"); //will need hdbars to get the right attribute location.
+   
     const response = await fetch(`/api/party/${id}`, {
       method: "DELETE",
     });
-
+    // lets us pass the value only of message.
+    let {message} = await response.json();
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/profile");
     } else {
-      alert("Sorry, this failed deletion.");
+      console.log(message);
+      alert(message);
     }
   }
 };
@@ -50,9 +54,9 @@ document
   .querySelector("#new-party-on-form")
   .addEventListener("submit", newParty);
 
-document
-  .querySelector("#party-list-on-form")
-  .addEventListener("click", deleteParty);
+// document
+//   .querySelectorAll("#party-list-on-form")
+//   .addEventListener("click", deleteParty);
 
 flatpickr('#party-date', {
     enableTime: true,

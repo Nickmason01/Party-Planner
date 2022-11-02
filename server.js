@@ -27,7 +27,7 @@ const sess = {
 };
 
 app.use(session(sess));
-app.use(express.static(__dirname + '/public'));
+
 
 app.engine('handlebars', hdbars.engine);
 app.set('view engine', 'handlebars');
@@ -38,8 +38,9 @@ app.set('port', PORT)
 
 app.use(express.json());
 
-app.use(express.urlencoded({ extended: true})); //maybe
-// app.use(express.static(path.join(_direname, 'public'))); // not sure 
+app.use(express.urlencoded({ extended: true}));
+app.use(express.static('public')); //maybe
+// app.use(express.static(path.join(__dirname, 'public'))); // not sure 
 
 
 app.use(routes); // this will be for the routes
