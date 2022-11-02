@@ -11,7 +11,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 
 const app = express();
-const PORT = process.env.PORT || 3301;
+const PORT = process.env.PORT || 3001;
 
 const hdbars = exhdbars.create({ helpers });
 // custom helpers--- not sure yet if needed.
@@ -31,8 +31,6 @@ app.use(session(sess));
 
 app.engine('handlebars', hdbars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', PORT)
-
 
 // template engines for handlebars?? I think we need them but need to review
 
