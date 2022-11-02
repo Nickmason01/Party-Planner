@@ -13,7 +13,7 @@
     <p>{{description}}</p>
     <p>{{format_date party_date}} {{format_time party_date}}</p>
     
-    <button data-id={{id}} onclick="deleteParty(event)">Cancel Party?</button>
+    <button data-id={{id}} id='party-list-on-form'>Cancel Party?</button>
     </div>
     </div>
   </div>
@@ -21,7 +21,7 @@
   </div>
 {{/each}}
 
-<div class="row mt-4">
+<div class="row mt-4"></div>
 <form id="new-party-on-form">
     <div class="col-md-6"></div>
     <h3>Make a New Party</h3>
@@ -48,21 +48,10 @@
 
     <div class="form-group">
       <div class="mb-0">
-        <label for="calendar" class="form-label">Select date </label>
+        <label for="calendar" class="form-label">Select date and time</label>
         <input
-          type="date"
           class="form-control form-control-solid"
-          placeholder="Pick date"
-          id="party-date"
-        />
-      </div>
-    <div class="form-group">
-      <div class="mb-0">
-        <label for="calendar" class="form-label">Select time</label>
-        <input
-          type ="time"
-          class="form-control form-control-solid"
-          placeholder="Pick time"
+          placeholder="Pick date & time"
           id="party-date"
         />
       </div>
