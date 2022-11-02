@@ -25,19 +25,22 @@
             🎉</span>
           <a href="/">Party Planner!</a>
         </h1>
+        
         <nav class="nav">
           <!-- Conditionally render login or logout links -->
           {{#if loggedIn}}
-            {{! <a href="/homepage">profile</a> }}
             <button class="no-button" id="logout">logout</button>
+            <div class="comm-button">
             <a id="comm-button" href="/community">community</a>
-            <a is="profile-button" href="/profile">profile</a>
+            </div>
+            <div class="profile-button">
+            <a id="profile-button" href="/profile">profile</a>
+            </div>
           {{else}}
             <a href="/login">login</a>
           {{/if}}
-
         </nav>
-      </header>
+     
 
     
         <main class="container container-fluid mt-5">
@@ -46,7 +49,6 @@
         </main>
      
       <footer>
-<p>MEOW</p>
       </footer>
     </div>
     <!-- Render script for logged in users only -->

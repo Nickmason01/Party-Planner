@@ -2,37 +2,43 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(18, 16, 33);
     background-color: rgb(194, 202, 238);
-    justify-content: flex-start;
-};
+}
 
- body {
+body {
     margin: 0;
-    height: 100%;
-    background-color: rgb(194, 202, 238);
- };
-
- main {
     height: 100vh;
- };
+    position:relative;
+    background-color: rgb(194, 202, 238);
+ }
 
-.nav {
+main {
+    height: 100vh;
+ }
+
+nav {
    text-align: center;
+   justify-content: space-evenly;
    font-size: 25px;
    font-weight: bold;
-};
+}
+
+button {
+    /* needs to be styled */
+}
+
+/* .comm-button {
+    padding: 10px;
+} */
 
 #login-form {
     margin: 20px;
     text-align: center;
     font-size: 25px;
     font-weight: bold;
-};
+}
 
 .main-header {
     text-align: center;
     justify-content: center;
-};
+}
 
-#party-list-on-form {
-    float: right;
-};
