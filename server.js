@@ -31,8 +31,6 @@ app.use(session(sess));
 
 app.engine('handlebars', hdbars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', PORT)
-
 
 // template engines for handlebars?? I think we need them but need to review
 
