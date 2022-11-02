@@ -204,3 +204,7 @@ justify-content: center;
 h3.card-title.text-center {
     margin-left: 10px;
 }
+
+@media screen and (max-width: 800px){
+    #new-party-on-form { width: 90%;} 
+}
