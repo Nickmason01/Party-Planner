@@ -5,7 +5,7 @@ need:
 - delete routes and delete-submit button!!!
 
 - the profile link needs to land on the homepage handlebars and it is not. Might need an entire new get. 
-
+??????
 - polish UI completely. 
 
 - write readme
