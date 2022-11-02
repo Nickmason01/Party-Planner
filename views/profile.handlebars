@@ -1,5 +1,7 @@
-{{!-- create a new party --}}
-<div class="row mt-4">
+
+<div class="row mt-4 add-post-container">
+
+
 <form id="new-party-on-form">
     <h3>Make a New Party</h3>
 
@@ -9,7 +11,8 @@
         type="text"
         class="form-control"
         id="party-name"
-        placeholder="name your party"
+
+
       />
     </div>
 
@@ -19,7 +22,6 @@
         type="text"
         class="form-control"
         id="description"
-        placeholder="description"
       />
     </div>
 {{!-- I do not know why the background did not change with this one. the class is form-group. I meant the apply it to the login as well. feel free to change it back or the colors in general. --}}
@@ -31,8 +33,9 @@
           id="party-date"
         />
       </div>
-      <div>
-      <button type="submit">Create Party</button>
+
+      <button id="create-party-btn"type="submit">Create Party</button>
+
     </div>
 </form>
  </div>
@@ -46,7 +49,9 @@
     <div class="col"> <p class="text-center">{{description}}</p>
       <div class="col"><p class="text-center">{{format_date party_date}} {{format_time party_date}}</p>
     
-    <button class="cancel-button" data-id={{id}} onclick="deleteParty(event)">Cancel Party?</button>
+
+    <button id='cancel-party-btn'data-id={{id}} onclick="deleteParty(event)">Cancel Party?</button>
+
     </div>
     </div>
   </div>

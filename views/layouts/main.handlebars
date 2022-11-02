@@ -15,29 +15,32 @@
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <div class="flex-column justify-space-around">
-      <header class="display-flex justify-space-between align-center p-2">
+      <header class="display-flex justify-space-between align-center">
         <h1 class="main-header">
           <span role="img" aria-label="party">
             🎉</span>
-          <a href="/">Party Planner!</a>
+          <a id="party-planner"href="/">Party Planner!</a>
         </h1>
         
         <nav class="nav">
           <!-- Conditionally render login or logout links -->
           {{#if loggedIn}}
-            <button class="no-button" id="logout">logout</button>
+            <a class="button-links" id="logout">logout</a>
             <div class="comm-button">
-            <a id="comm-button" href="/community">community</a>
+            <a class="button-links"id="comm-button" href="/community">community</a>
             </div>
             <div class="profile-button">
-            <a id="profile-button" href="/profile">profile</a>
+            <a class="button-links"id="profile-button" href="/profile">profile</a>
             </div>
-          {{else}}
-            <a href="/login">login</a>
+          {{!-- {{else}}
+            <a id="home-login-btn" href="/login">login</a> --}}
           {{/if}}
         </nav>
      
