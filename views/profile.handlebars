@@ -1,25 +1,3 @@
-{{#each parties as |party| }}
- <div class="card justify-space-between">
-  {{!-- we like cards but not the lines --}}
-  <div class="row">
- <h3 class="card-title text-center">{{name}}</h3>
- {{!-- this is not going center --}}
- </div>
-  <div class="col">
-    <div class="col">
-      <div class="col">
-    <h4>Party created by: {{user.name}}</h4>
-    <p>{{description}}</p>
-    <p>{{format_date party_date}} {{format_time party_date}}</p>
-    
-    <button data-id={{id}} onclick="deleteParty(event)">Cancel Party?</button>
-    </div>
-    </div>
-  </div>
-  
-  </div>
-{{/each}}
-
 <div class="row mt-4">
 <form id="new-party-on-form">
     <div class="col-md-6"></div>
@@ -58,6 +36,28 @@
     </div>
 </form>
  </div>
+
+ {{#each parties as |party| }}
+ <div class="card justify-space-between">
+  {{!-- we like cards but not the lines --}}
+  <div class="row">
+ <h3 class="card-title text-center">{{name}}</h3>
+ {{!-- this is not going center --}}
+ </div>
+  <div class="col">
+    <div class="col">
+      <div class="col">
+    <h4>Party created by: {{user.name}}</h4>
+    <p>{{description}}</p>
+    <p>{{format_date party_date}} {{format_time party_date}}</p>
+    
+    <button data-id={{id}} onclick="deleteParty(event)">Cancel Party?</button>
+    </div>
+    </div>
+  </div>
+  
+  </div>
+{{/each}}
 {{! have a homepage where my events are and dashboard for community parties }}
 
 <script src="./js/profile.js"></script>
