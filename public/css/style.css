@@ -1,3 +1,14 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(18, 16, 33);
+    background-color: rgb(194, 202, 238);
+    justify-content: flex-start;
+};
+
+ body {
+    margin: 0;
+ };
+
 .nav {
    text-align: center;
    font-size: 25px;
@@ -11,8 +22,9 @@
     font-weight: bold;
 };
 
-h1 .main-header {
+.main-header {
     text-align: center;
+    justify-content: center;
 };
 
 #party-list-on-form {
