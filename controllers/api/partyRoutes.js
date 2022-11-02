@@ -63,15 +63,16 @@ router.put("/:name", async (req, res) => {
 
 
 router.delete('/:id', withAuth, async (req, res) => {
+   
     const partyData = await Party.destroy({
         where : {
             id: req.params.id,
             user_id: req.session.user_id,
         },
     });
-
+  
     if(!partyData) {
-        res.status(404).json({message: 'No party selected!'});
+        res.status(404).json({message: 'Sorry, this party is not your to delete.'});
         return;
     }
 

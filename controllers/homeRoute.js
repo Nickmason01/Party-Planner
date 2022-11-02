@@ -57,6 +57,30 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const partyData = await Party.findAll( {
+      where: {
+        user_id: req.session.user_id
+      },
+      attributes: { exclude: ['password'] },
+      include: [{ model: User }],
+    });
+    console.log(partyData);
+    const parties = partyData.map(party => party.get({plain: true}));
+    console.log("parties", parties);
+    res.render('profile', {
+      parties,
+      loggedIn: true
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
 // router.get('/signup', )
 
 module.exports = router;
