@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Party, User } = require("../models");
 const withAuth = require('../utils/auth');
-
+// shows all parties of all users for the community page.
 router.get("/community", async (req, res) => {
   const partyData = await Party.findAll({
     include: [{ model: User }],
@@ -12,7 +12,7 @@ router.get("/community", async (req, res) => {
     loggedIn: req.session.loggedIn,
   });
 });
-
+// gets parties of login user for their homepage.
 router.get('/', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -31,7 +31,7 @@ router.get('/', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+// gets all information associated with a users party ids to display all event information.
 router.get('/party/:id', async (req, res) => {
   try {
       const startParty = await Party.findByPk(req.params.id, {
@@ -42,13 +42,12 @@ router.get('/party/:id', async (req, res) => {
       res.render('event', {
           party: partyData
       });
-      // return res.json(startParty);
   } catch (err) {
       console.log(err);
       res.status(500).json(err);
   }
 });
-
+// directs access to logged in users.
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
@@ -56,7 +55,7 @@ router.get("/login", (req, res) => {
   }
   res.render("login");
 });
-
+// access with authorization for users profile
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -79,8 +78,5 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
-// router.get('/signup', )
 
 module.exports = router;

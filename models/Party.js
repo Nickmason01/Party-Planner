@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require('../config/connection');
-
+// Party class for party data
 class Party extends Model {}
 
 Party.init(

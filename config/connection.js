@@ -1,9 +1,8 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
-console.log(process.env.DB_PASSWORD);
-
+// uses dotenv to connect with password locally.
 let sequelize;
-
+// Heroku sequelize connection. 
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {

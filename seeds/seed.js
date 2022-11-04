@@ -1,6 +1,6 @@
 const sequelize = require('../config/connection');
 const { User, Party } = require('../models');
-
+// seed test data
 const userData = require('./userData.json');
 const partyData = require('./partyData.json');
 
