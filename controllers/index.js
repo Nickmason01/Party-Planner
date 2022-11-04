@@ -1,5 +1,5 @@
 const router = require('express').Router();
-
+// all routes for the controller folder.
 const apiRoutes = require('./api');
 const homeRoutes = require('./homeRoute');
 

@@ -3,3 +3,4 @@ CREATE DATABASE party_db;
 
 USE DATABASE party_db;
 
+-- the database

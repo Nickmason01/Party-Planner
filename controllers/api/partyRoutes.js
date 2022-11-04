@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Party } = require('../../models');
 const withAuth = require('../../utils/auth');
-
+// put a new party by id
 router.put("/:id", async (req, res) => {
     const updateParty = await Party.update(req.body, {
         where: {
@@ -15,7 +15,7 @@ router.put("/:id", async (req, res) => {
     }
     res.status(200).json(updateParty);
 });
-
+// allows party creation with authorization
 router.post("/", withAuth, async (req, res) => {
     console.log(req.session);
         const partyCreator = req.body;
@@ -28,7 +28,7 @@ router.post("/", withAuth, async (req, res) => {
         newParty ? res.status(200).json(newParty) : res.status(400).json(err);
 });
 
-
+// this is the potential put to add yourself to a party you want to attend. 
 router.put("/:name", async (req, res) => {
     const joinParty = await Party.update(req.body, {
         where: {
@@ -43,25 +43,7 @@ router.put("/:name", async (req, res) => {
     console.log(joinParty);
     res.status(200).json(joinParty);
 });
-
-// a get route for parties to be displayed on the event page
-
-
-// router.get('/', async (req, res) => {
-//     try {
-//         const startParty = await Party.findAll({
-//             include: [{ model: Party, }],
-//         });
-//         return res.json(startParty);
-//     } catch (err) {
-//         console.log(err);
-//         res.status(500).json(err);
-//     }
-
-// });
-
-
-
+// allows delete party with authorization
 router.delete('/:id', withAuth, async (req, res) => {
    
     const partyData = await Party.destroy({

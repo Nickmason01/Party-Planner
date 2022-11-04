@@ -2,9 +2,8 @@ const express = require('express');
 const router = require("express").Router();
 
 const { User } = require("../../models");
-
+// creates a new user
 router.post('/', (req, res) => {
-  
    User.create({
       name: req.body.name,
       email: req.body.email,
@@ -22,7 +21,7 @@ router.post('/', (req, res) => {
     res.status(500).json(err);
   });
   }) 
-
+  // gets user data of logged in user
   router.get('/', async (req, res) => {
     try {
       const userData = await User.findAll({
@@ -32,7 +31,7 @@ router.post('/', (req, res) => {
       res.status(404).json(err);
     }
   });
-
+// checks credentials for login using session
 router.post('/login', async (req, res) => {
 
   const userData = await User.findOne({ where: { email: req.body.email } });
@@ -57,7 +56,7 @@ router.post('/login', async (req, res) => {
     res.json({user: userData, message: 'Welcome!' });
   });
 });
-
+// logs out user session
 router.post('/logout', (req, res) => {
   if(req.session.loggedIn) {
     req.session.destroy(() =>{

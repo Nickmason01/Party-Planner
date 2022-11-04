@@ -1,3 +1,4 @@
+// logs user out.
 const logout = async (event) => {
   event.preventDefault();
 

@@ -1,3 +1,4 @@
+// logs in stored user.
 const loginForm = async (event) => {
   event.preventDefault();
 
@@ -19,7 +20,7 @@ const loginForm = async (event) => {
     }
   }
 };
-
+// allows new user to sign up
 const signupForm = async (event) => {
   event.preventDefault();
 
@@ -42,12 +43,6 @@ const signupForm = async (event) => {
   }
 };
 
-// I believe these reference the hooks
-
 document.querySelector("#login-form").addEventListener("submit", loginForm);
 document.querySelector("#signup-form").addEventListener("submit", signupForm);
 
-// module.exports = {
-//     loginForm,
-//     signupForm
-// };

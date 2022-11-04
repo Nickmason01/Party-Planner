@@ -1,5 +1,4 @@
-// // flatpickr is a node module for a built in calendar feature with date and time.
-
+// helpers for date and time formatting. 
 module.exports = {
   format_date: (date) => {
     return date.toLocaleDateString();

@@ -1,5 +1,4 @@
-// const {User, Party} = require('.../models');
-// Is this needed to function with the models?
+// allows authorized user to post a new party.
 const newParty = async (event) => {
   event.preventDefault();
 
@@ -22,19 +21,18 @@ const newParty = async (event) => {
     });
 
     if (response.ok) {
-      // console.log(response);
       document.location.replace("/");
     } else {
       alert("Failed to create a post");
     }
   }
 };
-
+// allows authorized user to delete party. 
 const deleteParty = async (event) => {
  
   if (event.target.hasAttribute("data-id")) {
 
-    const id = event.target.getAttribute("data-id"); //will need hdbars to get the right attribute location.
+    const id = event.target.getAttribute("data-id"); 
    
     const response = await fetch(`/api/party/${id}`, {
       method: "DELETE",
@@ -49,15 +47,12 @@ const deleteParty = async (event) => {
     }
   }
 };
-// these event handlers also need the correct id or class to use these values.
+
 document
   .querySelector("#new-party-on-form")
   .addEventListener("submit", newParty);
 
-// document
-//   .querySelectorAll("#party-list-on-form")
-//   .addEventListener("click", deleteParty);
-
+  // flatpickr. Used as a month, day, year calendar and also adds the time of day a well.
 flatpickr('#party-date', {
     enableTime: true,
     dateFormat: 'Y-m-d H:i',
